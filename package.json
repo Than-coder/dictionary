@@ -1,0 +1,32 @@
+{
+  "name": "Dictionary",
+  "version": "1.0.0",
+  "description": "English Myanmar Dictionary developed by Than",
+  "homepage": "https://github.com/Than-coder",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "electron-rebuild -f -w sqlite3",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder build --linux"
+  },
+  "author": "Than<thainzawwin2016@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "electron": "^7.1.12",
+    "electron-builder": "^21.2.0",
+    "electron-rebuild": "^1.8.8"
+  },
+  "build": {
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "category": "Education",
+      "icon": "icon/icon.png"
+    }
+  }
+}
