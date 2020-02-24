@@ -8,7 +8,8 @@
     "start": "electron .",
     "rebuild": "electron-rebuild -f -w sqlite3",
     "postinstall": "electron-builder install-app-deps",
-    "build": "electron-builder build --linux"
+    "build-linux": "electron-builder build --linux",
+    "build-win": "electron-builder build --win"
   },
   "author": "Than<thainzawwin2016@gmail.com>",
   "license": "ISC",
@@ -27,6 +28,15 @@
       ],
       "category": "Education",
       "icon": "icon/icon.png"
+    },
+    "win":{
+      "target":[
+        {
+          "target":"nsis",
+          "arch":["ia32"]
+        }
+      ],
+      "icon":"icon/icon.ico"
     }
   }
 }
