@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "unicode";
+  src: url("Padauk-Bold.ttf");
+}
+
+body {
+  font-family: "unicode" !important;
+  font-size: 1.2rem;
+}

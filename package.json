@@ -1,25 +1,50 @@
 {
   "name": "Dictionary",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "English Myanmar Dictionary developed by Than",
-  "homepage": "https://github.com/Than-coder",
-  "main": "main.js",
+  "homepage": "./",
+  "main": "build/electron.js",
+  "author": "than<thainzawwin2016@gmail.com>",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.9.12",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "easy-peasy": "^3.3.0",
+    "electron-is-dev": "^1.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "sqlite3": "^4.2.0"
+  },
   "scripts": {
-    "start": "electron .",
+    "start": "BROWSER=none react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron public/electron.js",
     "rebuild": "electron-rebuild -f -w sqlite3",
     "postinstall": "electron-builder install-app-deps",
     "build-linux": "electron-builder build --linux",
     "build-win": "electron-builder build --win"
   },
-  "author": "Than<thainzawwin2016@gmail.com>",
-  "license": "ISC",
-  "dependencies": {
-    "sqlite3": "^4.1.0"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "devDependencies": {
-    "electron": "^7.1.12",
-    "electron-builder": "^21.2.0",
-    "electron-rebuild": "^1.8.8"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "build": {
     "linux": {
@@ -27,16 +52,23 @@
         "deb"
       ],
       "category": "Education",
-      "icon": "icon/icon.png"
+      "icon": "build/icon/icon.png"
     },
-    "win":{
-      "target":[
+    "win": {
+      "target": [
         {
-          "target":"nsis",
-          "arch":["ia32"]
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
         }
       ],
-      "icon":"icon/icon.ico"
+      "icon": "build/icon/icon.ico"
     }
+  },
+  "devDependencies": {
+    "electron": "^7.2.4",
+    "electron-builder": "^22.6.0",
+    "electron-rebuild": "^1.10.1"
   }
 }
